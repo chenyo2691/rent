@@ -1,7 +1,7 @@
 {
   "name": "rent",
   "version": "1.0.0",
-  "description": "出租屋管理系统",
+  "description": "Rental housing management system",
   "author": "chenyousheng",
   "private": true,
   "scripts": {
