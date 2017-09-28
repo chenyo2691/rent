@@ -15,18 +15,19 @@ export const constantRouterMap = [
   { path: '/login', component: login, hidden: true },
   { path: '/404', component: p404, hidden: true },
   {
-    path: '/test1', name: 'test1', component: Layout,
+    path: '/test1', name: 'test1', component: Layout, icon: 'zujian',
     children: [
-      { path: 't1', name: 't1', component: t1 }
+      { path: 't1', name: 't1', icon: 'zonghe', icon: 'zujian', component: t1 }
     ]
   },
   {
     path: '/test2',
     component: Layout,
     redirect: '/test2/t2',
+    icon: 'tubiao',
     noDropdown: true,
     children: [{ path: 't2', name: 't2', component: t2, meta: { role: ['admin'] } }]
-  },
+  }
 ]
 
 export default new Router({
@@ -36,5 +37,5 @@ export default new Router({
 })
 
 export const asyncRouterMap = [
-
+  { path: '*', redirect: '/404', hidden: true }
 ]

@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import router from './router'
 import store from './store'
+import '@/icons' // icon
 import '@/permission' // 权限
 
 Vue.config.productionTip = false
