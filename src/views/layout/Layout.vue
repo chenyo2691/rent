@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     sidebar() {
-      return this.$store.state.sidebar
+      return this.$store.getters.sidebar
     }
   },
   components: { Sidebar, Navbar, AppMain }

@@ -4,7 +4,7 @@
     <levelbar></levelbar>
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
-        <!-- <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'"> -->
+        <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
         <i class="el-icon-caret-bottom"></i>
       </div>
       <el-dropdown-menu class="user-dropdown" slot="dropdown">
@@ -21,8 +21,9 @@
   </el-menu>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import Levelbar from './Levelbar'
-import Hamburger from '../../components/Hamburger'
+import Hamburger from '@/components/Hamburger'
 
 export default {
   name: "Navbar",
@@ -35,15 +36,17 @@ export default {
       this.$store.dispatch('ToggleSideBar')
     },
     logout() {
-      // this.$store.dispatch('LogOut').then(() => {
-      //   location.reload()  // 为了重新实例化vue-router对象 避免bug
-      // })
+      this.$store.dispatch('LogOut').then(() => {
+        // 为了重新实例化vue-router对象 避免bug
+        location.reload();
+      })
     }
   },
   computed: {
-    sidebar() {
-      return this.$store.state.sidebar
-    }
+    ...mapGetters([
+      'sidebar',
+      'avatar'
+    ])
   },
   components: {
     Levelbar, Hamburger
