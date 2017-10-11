@@ -40,6 +40,16 @@ compiler.plugin('compilation', function (compilation) {
   })
 })
 
+// 对一切api开头的请求做代理 解决跨域问题 axios里面与后端交互的所有请求都加上api开头
+app.use('/api', proxyMiddleware({
+  // target: 'http://localhost:80/rent/public/index',
+  target: JSON.parse(config.dev.env.BASE_API),
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '/'
+  }
+}))
+
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]

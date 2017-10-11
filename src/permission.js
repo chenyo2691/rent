@@ -8,14 +8,17 @@ const whiteList = ['/login'];
 router.beforeEach((to, from, next) => {
   NProgress.start()
   if (getToken()) {
+    // console.log('当前TOKEN:' + getToken());
     if (to.path === '/login') {
       // 这里暂时无法解决跳转的页面是当前页面的时候，页面无法自刷新
       if (from.path === '/dashboard') {
+        // console.log('跳转3:' + to.path);
         next(false)
         NProgress.done()
       }
       next({ path: '/' });
     } else {
+      // console.log('当前角色:' + store.getters.roles);
       if (store.getters.roles.length === 0) {
         store.dispatch('GetInfo').then(res => {
           const roles = res.data.role;

@@ -2,14 +2,13 @@
  * @Author: chenyousheng@cd-bd
  * @Date: 2017-09-30 09:12:59
  * @Last Modified by: chenyousheng@cd-bd
- * @Last Modified time: 2017-09-30 09:14:01
+ * @Last Modified time: 2017-10-11 15:09:35
  */
 
 <template>
   <div class="dashboard-container">
-    <div class='dashboard-text'>name:{{name}}</div>
-    <div class='dashboard-text'>role:
-      <span v-for='role in roles' :key='role'>{{role}}</span>
+    <div class='dashboard-text'>欢迎回来 {{name}}
+      <span v-for='role in roles' :key='role'>[{{role}}] </span>
     </div>
   </div>
 </template>

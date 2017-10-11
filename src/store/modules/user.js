@@ -2,7 +2,7 @@
  * @Author: chenyousheng@cd-bd
  * @Date: 2017-09-29 14:29:59
  * @Last Modified by: chenyousheng@cd-bd
- * @Last Modified time: 2017-09-30 10:57:52
+ * @Last Modified time: 2017-10-10 14:13:43
  */
 
 import { login, logout, getInfo } from '@/api/login'

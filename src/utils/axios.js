@@ -2,7 +2,7 @@
  * @Author: chenyousheng@cd-bd
  * @Date: 2017-09-29 15:16:36
  * @Last Modified by: chenyousheng@cd-bd
- * @Last Modified time: 2017-09-29 16:50:32
+ * @Last Modified time: 2017-10-11 13:49:15
  */
 
 import axios from 'axios'
@@ -12,7 +12,7 @@ import { getToken } from '@/utils/auth'
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: process.env.BASE_API, // api的base_url
+  // baseURL: process.env.BASE_API, // api的base_url 为了解决跨域的问题 在nodejs服务器添加了代理
   timeout: 15000                  // 请求超时时间
 })
 

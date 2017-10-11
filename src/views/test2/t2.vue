@@ -1,6 +1,8 @@
 <template>
-  <div>
-    t2
+  <div class="t2-container">
+    <div class="t2-text">
+      page2
+    </div>
   </div>
 </template>
 <script>
@@ -12,6 +14,14 @@ export default {
   }
 }
 </script>
-<style lang="css" scoped>
-
+<style rel="stylesheet/scss" lang="scss" scoped>
+.t2 {
+  &-container {
+    margin: 30px;
+  }
+  &-text {
+    font-size: 30px;
+    line-height: 46px;
+  }
+}
 </style>
