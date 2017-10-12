@@ -50,6 +50,14 @@ app.use('/api', proxyMiddleware({
   }
 }))
 
+app.use('/web', proxyMiddleware({
+  target: 'http://localhost:80/rent/public',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/web': '/'
+  }
+}))
+
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]
